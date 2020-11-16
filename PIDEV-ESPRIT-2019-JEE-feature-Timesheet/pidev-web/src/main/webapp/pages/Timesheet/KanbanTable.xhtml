@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/template/default/template.xhtml">
+	<ui:param name="page_name" value="Scrum Board" />
+	<ui:define name="content">
+
+
+		<div class="wrapper">
+			<section class="section-container"> <!-- Page content-->
+			<div class="content-wrapper">
+
+				<div class="content-heading">
+					<div>
+						Nestable<small>Drag &amp; drop hierarchical list with
+							mouse and touch compatibility</small>
+					</div>
+				</div>
+
+				<div class="container-fluid" id="container-fluid">
+
+					<div class="js-nestable-action">
+						<a class="btn btn-secondary btn-sm mr-1" data-action="expand-all">Expand
+							All</a> <a class="btn btn-secondary btn-sm"
+							data-action="card-collapse-all">CollapseAll</a>
+					</div>
+
+					<br />
+
+					<div class="row">
+						<div class="col-lg-4 card card-default">
+							<div class="content-heading">
+								<center>
+								   <h:outputText value="To Do" />
+								</center>
+							</div>
+							<div class="dd " id="nestable" >
+								<ol class="dd-list" style="align-items: center;">
+									<ui:repeat value="#{ticketBean.ticketsTODO}" var="ticketToDO">
+								     	<li class="dd-item" data-id="#{ticketToDO.id}"   >
+								     		
+								     		
+								     	        <h:panelGroup rendered="#{ticketToDO.estimatedHours le 2}">
+								     	        
+								     	        <!-- START card-->
+												  <div  class="dd-handle card mb-3 border-success">
+													 <div class="card-header text-white bg-success">
+														<h:outputText value="#{ticketToDO.title}" />
+													 </div>
+													 <div class="card-body">
+														<h5 class="card-title">Danger card title</h5>
+														 <p class="card-text">
+															 <h:outputText value="#{ticketToDO.description}" />
+														 </p>
+														 <p class="card-footer">
+											                <h:outputText value="Estimated Hours : #{ticketToDO.estimatedHours}" />
+														</p>
+													</div>
+												 </div>
+												 <!-- END card-->
+												</h:panelGroup>
+												
+												<h:panelGroup rendered="#{ticketToDO.estimatedHours gt 2 and ticketToDO.estimatedHours le 4}">
+												<!-- START card-->
+												  <div class="dd-handle card mb-3 border-info">
+													 <div class="card-header text-white bg-info">
+														<h:outputText value="#{ticketToDO.title}" />
+													 </div>
+													 <div class="card-body">
+														<h5 class="card-title">Danger card title</h5>
+														 <p class="card-text">
+															 <h:outputText value="#{ticketToDO.description}" />
+														 </p>
+														 <p class="card-footer">
+											                <h:outputText value="Estimated Hours : #{ticketToDO.estimatedHours}" />
+														</p>
+													</div>
+												 </div>
+												 <!-- END card-->
+												</h:panelGroup>
+												
+												<h:panelGroup rendered="#{ticketToDO.estimatedHours gt 4 and ticketToDO.estimatedHours le 6}">
+												<!-- START card-->
+												  <div class="dd-handle card mb-3 border-warning">
+													 <div class="card-header text-white bg-warning">
+														<h:outputText value="#{ticketToDO.title}" />
+													 </div>
+													 <div class="card-body">
+														<h5 class="card-title">Danger card title</h5>
+														 <p class="card-text">
+															 <h:outputText value="#{ticketToDO.description}" />
+														 </p>
+														 <p class="card-footer">
+											                <h:outputText value="Estimated Hours : #{ticketToDO.estimatedHours}" />
+														</p>
+													</div>
+												 </div>
+												 <!-- END card-->
+												</h:panelGroup>
+												
+												<h:panelGroup rendered="#{ticketToDO.estimatedHours gt 6 and ticketToDO.estimatedHours le 8}">
+												<!-- START card-->
+												  <div class="dd-handle card mb-3 border-danger">
+													 <div class="card-header text-white bg-danger">
+														<h:outputText value="#{ticketToDO.title}" />
+													 </div>
+													 <div class="card-body">
+														<h5 class="card-title">Danger card title</h5>
+														 <p class="card-text">
+															 <h:outputText value="#{ticketToDO.description}" />
+														 </p>
+														 <p class="card-footer">
+											                <h:outputText value="Estimated Hours : #{ticketToDO.estimatedHours}" />
+														</p>
+													</div>
+												 </div>
+												 <!-- END card-->
+												</h:panelGroup>
+												
+											
+										 </li>
+									 </ui:repeat>
+								</ol>
+								<h:inputTextarea  class="form-control" id="nestable-output"/>
+							</div>
+						</div>
+						<div class="col-md-4 card card-default">
+						<div class="content-heading">
+								<center>
+								   <h:outputText value="In Progress" />
+								</center>
+							</div>
+							<div class="dd" id="nestable2" >
+								<ol class="dd-list">
+									<ui:repeat value="#{ticketBean.ticketsInProgress}" var="ticketInProgress">
+										<li class="dd-item" data-id="#{ticketInProgress.id}"  >	
+								     		
+								     	        <h:panelGroup rendered="#{ticketInProgress.estimatedHours le 2}">
+								     	        
+								     	        <!-- START card-->
+												  <div class="dd-handle card mb-3 border-success">
+													 <div class="card-header text-white bg-success">
+														<h:outputText value="#{ticketInProgress.title}" />
+													 </div>
+													 <div class="card-body">
+														<h5 class="card-title">Danger card title</h5>
+														 <p class="card-text">
+															 <h:outputText value="#{ticketInProgress.description}" />
+														 </p>
+														 <p class="card-footer">
+											                <h:outputText value="Estimated Hours : #{ticketInProgress.estimatedHours}" />
+														</p>
+													</div>
+												 </div>
+												 <!-- END card-->
+												</h:panelGroup>
+												
+												<h:panelGroup rendered="#{ticketInProgress.estimatedHours gt 2 and ticketInProgress.estimatedHours le 4}">
+												<!-- START card-->
+												  <div class="dd-handle card mb-3 border-info">
+													 <div class="card-header text-white bg-info">
+														<h:outputText value="#{ticketInProgress.title}" />
+													 </div>
+													 <div class="card-body">
+														<h5 class="card-title">Danger card title</h5>
+														 <p class="card-text">
+															 <h:outputText value="#{ticketInProgress.description}" />
+														 </p>
+														 <p class="card-footer">
+											                <h:outputText value="Estimated Hours : #{ticketInProgress.estimatedHours}" />
+														</p>
+													</div>
+												 </div>
+												 <!-- END card-->
+												</h:panelGroup>
+												
+												<h:panelGroup rendered="#{ticketInProgress.estimatedHours gt 4 and ticketInProgress.estimatedHours le 6}">
+												<!-- START card-->
+												  <div class="dd-handle card mb-3 border-warning">
+													 <div class="card-header text-white bg-warning">
+														<h:outputText value="#{ticketInProgress.title}" />
+													 </div>
+													 <div class="card-body">
+														<h5 class="card-title">Danger card title</h5>
+														 <p class="card-text">
+															 <h:outputText value="#{ticketInProgress.description}" />
+														 </p>
+														 <p class="card-footer">
+											                <h:outputText value="Estimated Hours : #{ticketInProgress.estimatedHours}" />
+														</p>
+													</div>
+												 </div>
+												 <!-- END card-->
+												</h:panelGroup>
+												
+												<h:panelGroup rendered="#{ticketInProgress.estimatedHours gt 6 and ticketInProgress.estimatedHours le 8}">
+												<!-- START card-->
+												  <div class="dd-handle card mb-3 border-danger">
+													 <div class="card-header text-white bg-danger">
+														<h:outputText value="#{ticketInProgress.title}" />
+													 </div>
+													 <div class="card-body">
+														<h5 class="card-title">Danger card title</h5>
+														 <p class="card-text">
+															 <h:outputText value="#{ticketInProgress.description}" />
+														 </p>
+														 <p class="card-footer">
+											                <h:outputText value="Estimated Hours : #{ticketInProgress.estimatedHours}" />
+														</p>
+													</div>
+												 </div>
+												 <!-- END card-->
+												</h:panelGroup>
+											
+											
+										</li>
+									</ui:repeat>
+								</ol>
+								<h:inputTextarea class="form-control" id="nestable2-output"></h:inputTextarea>
+							</div>
+						</div>
+						
+						<div class="col-md-4 card card-default">
+						<div class="content-heading">
+								<center>
+								   <h:outputText value="Done" />
+								</center>
+							</div>
+							<div class="dd" id="nestable2" >
+								<ol class="dd-list">
+									<ui:repeat value="#{ticketBean.ticketsDONE}" var="ticketDone">
+										<li class="dd-item" data-id="#{ticketDone.id}" >
+											
+								     	        <h:panelGroup rendered="#{ticketDone.estimatedHours le 2}">
+								     	        
+								     	        <!-- START card-->
+												  <div class="dd-handle card mb-3 border-success">
+													 <div class="card-header text-white bg-success" >
+														<h:outputText value="#{ticketDone.title}" />
+													 </div>
+													 <div class="card-body">
+														<h5 class="card-title">Danger card title</h5>
+														 <p class="card-text">
+															 <h:outputText value="#{ticketDone.description}" />
+														 </p>
+														 <p class="card-footer">
+											                <h:outputText value="Estimated Hours : #{ticketDone.estimatedHours}" />
+														</p>
+													</div>
+												 </div>
+												 <!-- END card-->
+												</h:panelGroup>
+												
+												<h:panelGroup rendered="#{ticketDone.estimatedHours gt 2 and ticketDone.estimatedHours le 4}">
+												<!-- START card-->
+												  <div class="dd-handle card mb-3 border-info">
+													 <div class="card-header text-white bg-info">
+														<h:outputText value="#{ticketDone.title}" />
+													 </div>
+													 <div class="card-body">
+														<h5 class="card-title">Danger card title</h5>
+														 <p class="card-text">
+															 <h:outputText value="#{ticketDone.description}" />
+														 </p>
+														 <p class="card-footer">
+											                <h:outputText value="Estimated Hours : #{ticketDone.estimatedHours}" />
+														</p>
+													</div>
+												 </div>
+												 <!-- END card-->
+												</h:panelGroup>
+												
+												<h:panelGroup rendered="#{ticketDone.estimatedHours gt 4 and ticketDone.estimatedHours le 6}">
+												<!-- START card-->
+												  <div class="dd-handle card mb-3 border-warning">
+													 <div class="card-header text-white bg-warning">
+														<h:outputText value="#{ticketDone.title}" />
+													 </div>
+													 <div class="card-body">
+														<h5 class="card-title">Danger card title</h5>
+														 <p class="card-text">
+															 <h:outputText value="#{ticketDone.description}" />
+														 </p>
+														 <p class="card-footer">
+											                <h:outputText value="Estimated Hours : #{ticketDone.estimatedHours}" />
+														</p>
+													</div>
+												 </div>
+												 <!-- END card-->
+												</h:panelGroup>
+												
+												<h:panelGroup rendered="#{ticketDone.estimatedHours gt 6 and ticketDone.estimatedHours le 8}">
+												<!-- START card-->
+												  <div class="dd-handle card mb-3 border-danger">
+													 <div class="card-header text-white bg-danger">
+														<h:outputText value="#{ticketDone.title}" />
+													 </div>
+													 <div class="card-body">
+														<h5 class="card-title">Danger card title</h5>
+														 <p class="card-text">
+															 <h:outputText value="#{ticketDone.description}" />
+														 </p>
+														 <p class="card-footer">
+											                <h:outputText value="Estimated Hours : #{ticketDone.estimatedHours}" />
+														</p>
+													</div>
+												 </div>
+												 <!-- END card-->
+												</h:panelGroup>
+											
+											
+										</li>
+									</ui:repeat>
+								</ol>
+								<h:inputTextarea class="form-control" id="nestable2-output"></h:inputTextarea>
+							</div>
+						</div>
+					
+						
+					</div>
+				</div>
+			</div>
+			</section>
+			<!-- Page footer-->
+		</div>
+		<!-- =============== VENDOR SCRIPTS ===============-->
+
+
+		<script type="application/javascript">
+		$(document).ready(function(){
+			
+		// console.log(document.getElementById("nestable-output").value);
+		 
+		 $('.dd').nestable().on('change','.dd-item', function() {
+			  // want to know the clicked element?
+			  // => check out: `e.target` and/or `e.currentTarget`
+			  // the call will bubble up to the root element (and all elements in between) if you don't stop propagation
+		     
+			  e.stopPropagation();
+		     var id = $(this).data('id'),
+		      parentId = $(this).parents('.dd-item').data('id');
+			  
+		     $.ajax({
+		    // console.log(document.getElementById("nestable-output").value);
+			 //console.log(" the current eleemet  "+id.value +"  parent "+parentId.value);
+		     })
+		 });
+		 
+		});	
+		</script>
+
+
+	</ui:define>
+</ui:composition>

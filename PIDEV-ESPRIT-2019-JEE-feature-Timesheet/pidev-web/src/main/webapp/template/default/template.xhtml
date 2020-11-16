@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<title>#{page_name}</title>
+	<h:outputStylesheet library="default"
+		name="vendor/@fortawesome/fontawesome-free/css/brands.css" />
+	<h:outputStylesheet library="default"
+		name="vendor/@fortawesome/fontawesome-free/css/brands.css" />
+	<h:outputStylesheet library="default"
+		name="vendor/@fortawesome/fontawesome-free/css/regular.css" />
+	<h:outputStylesheet library="default"
+		name="vendor/@fortawesome/fontawesome-free/css/solid.css" />
+	<h:outputStylesheet library="default"
+		name="vendor/@fortawesome/fontawesome-free/css/fontawesome.css" />
+	<h:outputStylesheet library="default"
+		name="vendor/simple-line-icons/css/simple-line-icons.css" />
+	<h:outputStylesheet library="default"
+		name="vendor/animate.css/animate.css" />
+	<h:outputStylesheet library="default"
+		name="vendor/whirl/dist/whirl.css" />
+	<h:outputStylesheet library="default"
+		name="vendor/weather-icons/css/weather-icons.css" />
+	<h:outputStylesheet library="default" name="css/bootstrap.css"
+		id="bscss" />
+	<h:outputStylesheet library="default" name="css/app.css" id="maincss" />
+	<link
+		href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+		crossorigin="anonymous" />
+	<link 
+	rel="icon" 
+	type="image/x-icon" href="favicon.ico"/>
+
+
+	<!-- 23 oct 19-->
+	
+	
+	   <!-- FONT AWESOME-->
+   <h:outputStylesheet library="default" name="vendor/@fortawesome/fontawesome-free/css/brands.css" />
+   <h:outputStylesheet library="default" name="vendor/@fortawesome/fontawesome-free/css/regular.css" />
+   <h:outputStylesheet library="default" name="vendor/@fortawesome/fontawesome-free/css/solid.css" />
+   <h:outputStylesheet library="default" name="vendor/@fortawesome/fontawesome-free/css/fontawesome.css" /><!-- SIMPLE LINE ICONS-->
+   <h:outputStylesheet library="default" name="vendor/simple-line-icons/css/simple-line-icons.css" /><!-- ANIMATE.CSS-->
+   <h:outputStylesheet library="default" name="vendor/animate.css/animate.css" /><!-- WHIRL (spinners)-->
+   <h:outputStylesheet library="default" name="vendor/whirl/dist/whirl.css" /><!-- =============== PAGE VENDOR STYLES ===============-->
+   <!-- TAGS INPUT-->
+   <h:outputStylesheet library="default" name="vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" /><!-- SLIDER CTRL-->
+   <h:outputStylesheet library="default" name="vendor/bootstrap-slider/dist/css/bootstrap-slider.css" /><!-- CHOSEN-->
+   <h:outputStylesheet library="default" name="vendor/chosen-js/chosen.css" /><!-- DATETIMEPICKER-->
+   <h:outputStylesheet library="default" name="vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" /><!-- COLORPICKER-->
+   <h:outputStylesheet library="default" name="vendor/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css" /><!-- SELECT2-->
+   <h:outputStylesheet library="default" name="vendor/select2/dist/css/select2.css" />
+   <h:outputStylesheet library="default" name="vendor/@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.css" /><!-- WYSIWYG-->
+   <h:outputStylesheet library="default" name="vendor/bootstrap-wysiwyg/css/style.css" /><!-- =============== BOOTSTRAP STYLES ===============-->
+   <h:outputStylesheet library="default" name="css/bootstrap.css" id="bscss" /><!-- =============== APP STYLES ===============-->
+   <h:outputStylesheet library="default" name="css/app.css" id="maincss" />
+   
+   <h:outputStylesheet library="default" name="vendor/loaders.css/loaders.css"/><!-- Spinkit-->
+   <!-- Datatables-->
+   
+   <h:outputStylesheet library="default" name="vendor/datatables.net-bs4/css/dataTables.bootstrap4.css" />
+   <h:outputStylesheet library="default" name="vendor/datatables.net-keytable-bs/css/keyTable.bootstrap.css"/>
+   <h:outputStylesheet library="default" name="vendor/datatables.net-responsive-bs/css/responsive.bootstrap.css"/>
+   <!-- =============== BOOTSTRAP STYLES ===============-->
+	
+	<!-- End 23 oct 19-->
+	
+
+
+	<!-- MODERNIZR-->
+	<h:outputScript library="default"
+		name="vendor/modernizr/modernizr.custom.js"></h:outputScript>
+	<!-- STORAGE API-->
+	<h:outputScript library="default"
+		name="vendor/js-storage/js.storage.js"></h:outputScript>
+	<!-- SCREENFULL-->
+	<h:outputScript library="default"
+		name="vendor/screenfull/dist/screenfull.js"></h:outputScript>
+	<!-- i18next-->
+	<h:outputScript library="default" name="vendor/i18next/i18next.js"></h:outputScript>
+	<h:outputScript library="default"
+		name="vendor/i18next-xhr-backend/i18nextXHRBackend.js"></h:outputScript>
+	<h:outputScript library="default" name="vendor/jquery/dist/jquery.js"></h:outputScript>
+	<h:outputScript library="default"
+		name="vendor/popper.js/dist/umd/popper.js"></h:outputScript>
+	<h:outputScript library="default"
+		name="vendor/bootstrap/dist/js/bootstrap.js"></h:outputScript>
+	<!-- =============== PAGE vendor SCRIPTS ===============-->
+	<!-- SLIMSCROLL-->
+	<h:outputScript library="default"
+		name="vendor/jquery-slimscroll/jquery.slimscroll.js"></h:outputScript>
+	<!-- SPARKLINE-->
+	<h:outputScript library="default"
+		name="vendor/jquery-sparkline/jquery.sparkline.js"></h:outputScript>
+	<!-- FLOT CHART-->
+	<h:outputScript library="default" name="vendor/flot/jquery.flot.js"></h:outputScript>
+	<h:outputScript library="default"
+		name="vendor/jquery.flot.tooltip/js/jquery.flot.tooltip.js"></h:outputScript>
+	<h:outputScript library="default"
+		name="vendor/flot/jquery.flot.resize.js"></h:outputScript>
+	<h:outputScript library="default" name="vendor/flot/jquery.flot.pie.js"></h:outputScript>
+	<h:outputScript library="default"
+		name="vendor/flot/jquery.flot.time.js"></h:outputScript>
+	<h:outputScript library="default"
+		name="vendor/flot/jquery.flot.categories.js"></h:outputScript>
+	<h:outputScript library="default"
+		name="vendor/jquery.flot.spline/jquery.flot.spline.js"></h:outputScript>
+	<!-- EASY PIE CHART-->
+	<h:outputScript library="default"
+		name="vendor/easy-pie-chart/dist/jquery.easypiechart.js"></h:outputScript>
+	<!-- MOMENT JS-->
+	<h:outputScript library="default"
+		name="vendor/moment/min/moment-with-locales.js"></h:outputScript>
+	<!-- =============== APP SCRIPTS ===============-->
+	<h:outputScript library="default" name="js/app.js"></h:outputScript>
+
+
+
+
+	<!--  23 oct 19-->
+	
+	<h:outputScript library="default" name="vendor/modernizr/modernizr.custom.js"></h:outputScript><!-- STORAGE API-->
+   <h:outputScript library="default" name="vendor/js-storage/js.storage.js"></h:outputScript><!-- SCREENFULL-->
+   <h:outputScript library="default" name="vendor/screenfull/dist/screenfull.js"></h:outputScript><!-- i18next-->
+   <h:outputScript library="default" name="vendor/i18next/i18next.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/i18next-xhr-backend/i18nextXHRBackend.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/jquery/dist/jquery.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/popper.js/dist/umd/popper.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/bootstrap/dist/js/bootstrap.js"></h:outputScript><!-- =============== PAGE VENDOR SCRIPTS ===============-->
+   <!-- FILESTYLE-->
+   <h:outputScript library="default" name="vendor/bootstrap-filestyle/src/bootstrap-filestyle.js"></h:outputScript><!-- TAGS INPUT-->
+   <h:outputScript library="default" name="vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.js"></h:outputScript><!-- CHOSEN-->
+   <h:outputScript library="default" name="vendor/chosen-js/chosen.jquery.js"></h:outputScript><!-- SLIDER CTRL-->
+   <h:outputScript library="default" name="vendor/bootstrap-slider/dist/bootstrap-slider.js"></h:outputScript><!-- INPUT MASK-->
+   <h:outputScript library="default" name="vendor/inputmask/dist/jquery.inputmask.bundle.js"></h:outputScript><!-- WYSIWYG-->
+   <h:outputScript library="default" name="vendor/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></h:outputScript><!-- MOMENT JS-->
+   <h:outputScript library="default" name="vendor/moment/min/moment-with-locales.js"></h:outputScript><!-- DATETIMEPICKER-->
+   <h:outputScript library="default" name="vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></h:outputScript><!-- COLORPICKER-->
+   <h:outputScript library="default" name="vendor/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></h:outputScript><!-- SELECT2-->
+   <h:outputScript library="default" name="vendor/select2/dist/js/select2.full.js"></h:outputScript><!-- =============== APP SCRIPTS ===============-->
+   <h:outputScript library="default" name="js/app.js"></h:outputScript>
+   
+   <h:outputScript library="default" name="vendor/sweetalert/dist/sweetalert.min.js"></h:outputScript>
+   <!-- Datatables-->
+   <h:outputScript library="default" name="vendor/datatables.net/js/jquery.dataTables.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/datatables.net-bs4/js/dataTables.bootstrap4.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/datatables.net-buttons/js/dataTables.buttons.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/datatables.net-buttons/js/buttons.colVis.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/datatables.net-buttons/js/buttons.flash.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/datatables.net-buttons/js/buttons.html5.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/datatables.net-buttons/js/buttons.print.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/datatables.net-keytable/js/dataTables.keyTable.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/datatables.net-responsive/js/dataTables.responsive.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/datatables.net-responsive-bs/js/responsive.bootstrap.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/jszip/dist/jszip.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/pdfmake/build/pdfmake.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/pdfmake/build/vfs_fonts.js"></h:outputScript><!-- =============== APP SCRIPTS ===============-->
+   
+	 <!-- MODERNIZR TimeSheet Kanban  -->
+   <h:outputScript library="default" name="vendor/nestable/jquery.nestable.js"/><!-- =============== APP SCRIPTS ===============-->
+   <h:outputScript library="default" name="vendor/modernizr/modernizr.custom.js"></h:outputScript><!-- STORAGE API-->
+   <h:outputScript library="default" name="vendor/js-storage/js.storage.js"></h:outputScript><!-- SCREENFULL-->
+   <h:outputScript library="default" name="vendor/screenfull/dist/screenfull.js"></h:outputScript><!-- i18next-->
+   <h:outputScript library="default" name="vendor/i18next/i18next.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/i18next-xhr-backend/i18nextXHRBackend.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/jquery/dist/jquery.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/popper.js/dist/umd/popper.js"></h:outputScript>
+   <h:outputScript library="default" name="vendor/bootstrap/dist/js/bootstrap.js"></h:outputScript>
+	
+	<!-- End 23 oct 19-->
+</h:head>
+<body>
+	<div class="wrapper">
+		<ui:include src="header.xhtml" />
+		<ui:include src="side-bar.xhtml" />
+		<ui:insert name="menu" />
+		<ui:insert name="content" />
+		<ui:include src="footer.xhtml" />
+	</div>
+</body>
+</html>

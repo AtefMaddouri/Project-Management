@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	template="/template/default/template.xhtml">
+	<ui:param name="page_name" value="Ticket" />
+	<ui:define name="content">
+		<section class="section-container"> <!-- Page content-->
+
+
+		<div class="wrapper">
+			<!-- Page content-->
+
+			<div class="content-wrapper">
+				<div class="content-heading">
+					<div>
+						Ticket Form <small>Add tickets to an existing project</small>
+					</div>
+				</div>
+
+				<!-- START Form-->
+
+				<h:form class="form-horizontal">
+
+					<div class="content-heading">
+						<div class="card card-default col-md-12">
+							<div class="card-body"></div>
+							<fieldset>
+								<div class="form-group row">
+									<label class="col-md-2 col-form-label"> <strong>
+											<h:outputText value="Project" class="col-md-2 col-form-label"
+												style=" font-size:32px" />
+									</strong>
+									</label>
+									<div class="col-md-8">
+										<h:selectOneMenu value="#{ticketBean.projectId}"
+											class=" chosen-select form-control"
+											style="display: none;font-size:24px" id="selectProject"
+											required="true"
+											requiredMessage="You have to select a project">
+											<f:selectItem itemLabel="-- Select One project --" itemValue="" />
+											<f:selectItems value="#{ticketBean.teams_ProjectsList}" />
+										</h:selectOneMenu>
+									</div>
+									<div class="col-md-2">
+										<code>
+											<h:message for="selectProject" errorStyle="color:red" />
+										</code>
+									</div>
+								</div>
+							</fieldset>
+							<!-- Project informations  -->
+							<div class="list-group">
+								<div class="list-group-item">
+									<h:dataTable class="wd-wide">
+										<h:column class="wd-xs d-none d-lg-table-cell col-md-3">
+											<f:facet name="header" class="px-2">
+												<h:outputText class="icon-people mr-2 fa fa-users"
+													value="#{ticketBean.teamMemberNbrs}" />
+											</f:facet>
+										</h:column>
+										<h:column class="wd-xs d-none d-lg-table-cell col-md-3">
+											<f:facet name="header" class="px-2">
+												<h:outputText class="fa fa-list-alt "
+													value="#{ticketBean.ticketsNbrs}" />
+											</f:facet>
+										</h:column>
+										<h:column class="wd-sm col-md-6">
+											<f:facet name="header" class="px-6">
+												<div class="progress progress-xs">
+													<div style="width: 60%"
+														class="progress-bar progress-bar-striped bg-green"
+														role="progressbar" aria-valuemin="0" aria-valuemax="100">
+													</div>
+												</div>
+											</f:facet>
+										</h:column>
+									</h:dataTable>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="content-heading">
+						<div class="card card-default col-md-12">
+
+							<div class="card-body"></div>
+							<fieldset>
+								<div class="form-group row">
+									<label class="col-md-2 col-form-label"> <h:outputText
+											value="Title" class="col-md-2 col-form-label" />
+									</label>
+									<div class="col-md-8">
+										<h:inputText value="#{ticketBean.ticket.title}"
+											class="form-control" id="Title" required="true"
+											requiredMessage="**Champ Required" />
+									</div>
+									<div class="col-md-2">
+										<code>
+											<h:message for="Title" errorStyle="color:red" />
+										</code>
+									</div>
+								</div>
+							</fieldset>
+
+							<fieldset>
+								<div class="form-group row">
+									<label class="col-md-2 col-form-label"> <h:outputText
+											value="Description" class="col-md-2 col-form-label" />
+									</label>
+									<div class="col-md-8">
+										<h:inputTextarea value="#{ticketBean.ticket.description}"
+											class="form-control note-editor note-editor-margin" rows="10"
+											id="Description" required="true"
+											requiredMessage="**Champ Required" />
+									</div>
+									<div class="col-md-2">
+										<code>
+											<h:message for="Description" errorStyle="color:red" />
+										</code>
+									</div>
+								</div>
+							</fieldset>
+
+							<fieldset>
+								<div class="form-group row">
+									<label class="col-md-2 col-form-label"> <h:outputText
+											value="Estimation" class="col-md-2 col-form-label" />
+									</label>
+									<div class="col-md-8">
+										<input name="estimation" id="estimation"
+											class=" form-control slider slider-horizontal col-md-10"
+											data-ui-slider="" type="text" value="" data-slider-min="0"
+											data-slider-max="20" data-slider-step="1"
+											data-slider-value="" data-slider-orientation="horizontal" />
+									</div>
+
+								</div>
+							</fieldset>
+
+							<fieldset>
+								<div class="card-footer text-center">
+									<h:commandButton value="Add To Project"
+										action="#{ticketBean.addTicket()}"
+										class="btn btn-info col-md-5 " />
+								</div>
+							</fieldset>
+
+						</div>
+					</div>
+				</h:form>
+
+			</div>
+		</div>
+		<!-- table -->
+		<div class="content-heading">
+			<div class="card card-default col-md-12">
+				<div class="card-body">
+					<div class="table-responsive bootgrid">
+						<h:dataTable class="table table-striped my-4 w-100"
+							rendered="#{ticketBean.renderTableBoolean}" id="datatable2"
+							value="#{ticketBean.projectTickets}" var="projTicket" border="1">
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="Title" />
+								</f:facet>
+								<h:outputText value="#{projTicket.title}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="Description" />
+								</f:facet>
+								<h:outputText value="#{projTicket.description}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="Estimated Hours" />
+								</f:facet>
+								<h:outputText value="#{projTicket.estimatedHours}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header">
+									<h:outputText value="Status" />
+								</f:facet>
+								<h:outputText value="#{projTicket.status}" />
+							</h:column>
+							<h:column style="column-width: 5px; ">
+							    <f:facet name="header" >
+									<h:outputText value="Action" />
+								</f:facet>
+							  <h:form>
+								<h:commandLink  styleClass="btn btn-success" action="#{ticketBean.updateTicket(projTicket)}" >
+								<h:outputText class="fa fa-edit" />
+								</h:commandLink>
+								<h:commandLink styleClass="btn btn-danger" action="#{ticketBean.deleteTicket(projTicket.id)}" >
+								<h:outputText class="fa fa-remove" />
+								</h:commandLink>
+							  </h:form>
+							</h:column>
+						</h:dataTable>
+					</div>
+				</div>
+			</div>
+		</div>
+		</section>
+	</ui:define>
+</ui:composition>
